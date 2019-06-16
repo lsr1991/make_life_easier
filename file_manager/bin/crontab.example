@@ -1,0 +1,1 @@
+0 0 * * * ~/MakeLifeEasier/file_manager/bin/tmp_file_manager.sh clean &>> /tmp/clean_tmp_files.log
