@@ -18,6 +18,13 @@ init () {
 }
 
 clean () {
+    echo "---------- Date: $date -----------"
+    # log
+    find $tmp_dir/1d -depth 1 -maxdepth 1 -mtime +0 -exec echo rm -rf {} \;
+    find $tmp_dir/1w -depth 1 -maxdepth 1 -mtime +6 -exec echo rm -rf {} \;
+    find $tmp_dir/1m -depth 1 -maxdepth 1 -mtime +30 -exec echo rm -rf {} \;
+    find $tmp_dir/1y -depth 1 -maxdepth 1 -mtime +365 -exec echo rm -rf {} \;
+    # take action
     find $tmp_dir/1d -depth 1 -maxdepth 1 -mtime +0 -exec rm -rf {} \;
     find $tmp_dir/1w -depth 1 -maxdepth 1 -mtime +6 -exec rm -rf {} \;
     find $tmp_dir/1m -depth 1 -maxdepth 1 -mtime +30 -exec rm -rf {} \;
